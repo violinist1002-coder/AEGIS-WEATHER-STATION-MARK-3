@@ -1,0 +1,40 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+local.properties
+*.jks
+*.keystore
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.streamlit/secrets.toml
+
+# Android / Gradle
+.gradle/
+.kotlin/
+**/build/
+**/.cxx/
+**/.externalNativeBuild/
+captures/
+
+# Generated artifacts, data and user-local files
+*.apk
+*.aab
+*.log
+*.csv
+*.db
+*.sqlite3
