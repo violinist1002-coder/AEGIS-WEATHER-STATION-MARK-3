@@ -6,6 +6,32 @@
 
 > **Project status:** Hackathon prototype; Android V0.4 development line. The interpretation logic is currently **rule-based**, not a trained machine-learning model. The rain plate senses moisture, not rainfall quantity. This is not a certified safety or disaster-warning device.
 
+## 🎬 Project development journey
+
+Follow the engineering progress, experiments, and iterations behind AEGIS in the **[AEGIS Project Journey — YouTube playlist](https://www.youtube.com/playlist?list=PLYRlXJlb3tk8)**.
+
+[![AEGIS hardware development photo](docs/images/hardware_photo.jpg)](https://www.youtube.com/playlist?list=PLYRlXJlb3tk8)
+
+**Watch:** [YouTube development playlist](https://www.youtube.com/playlist?list=PLYRlXJlb3tk8) · [Local demonstration video](media/AEGIS_WORKING.mp4) · [Development notes](docs/PROJECT_JOURNEY.md)
+
+## 📷 AEGIS in action
+
+### Hardware station
+
+![Physical Arduino and sensor prototype](docs/images/hardware_photo.jpg)
+
+### Android application
+
+| Live monitoring | Environmental insights |
+|:---:|:---:|
+| ![AEGIS Android live sensor dashboard](docs/images/android_home.jpg) | ![AEGIS Android weather insights view](docs/images/android_weather_insights.jpg) |
+
+### Circuit/wiring diagram
+
+![AEGIS wiring diagram](docs/images/hardware_wiring.png)
+
+Edit the source diagram with [Fritzing](hardware/AEGIS_HARDWARE.fzz). The Arduino firmware is available at [`firmware/ER3_0_1V.ino`](firmware/ER3_0_1V.ino).
+
 ## Features
 
 - **Physical sensors:** Arduino Uno R3 with DHT11 for air temperature/humidity and an analog rain/moisture plate; OLED display and DS18B20 sensor in the Arduino hardware setup.
@@ -23,9 +49,11 @@ AEGIS/
 ├── dashboard/           # Streamlit web dashboard + Flask sensor API
 │   ├── app.py
 │   └── requirements.txt
-├── firmware/            # Arduino sketch upload location + CSV protocol notes
+├── firmware/            # Arduino sketch and CSV protocol notes
+├── hardware/            # Editable Fritzing project
 ├── assets/              # Branding icon
-├── docs/                # Architecture and demo/setup documentation
+├── media/               # Demonstration video
+├── docs/                # Documentation, journey link, project photos/screenshots
 ├── Start_AEGIS_Dashboard.bat
 ├── .gitignore
 └── README.md
@@ -80,7 +108,7 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for details and [docs/DEMO_CHEC
 
 ## Hardware firmware
 
-The exact Arduino `.ino` file wasn't included in this packaged source snapshot. **Add your tested sketch** to `firmware/` before publishing if you want others to reproduce the hardware station. Details of the required serial format are in [firmware/README.md](firmware/README.md).
+The Arduino sketch is included at [`firmware/ER3_0_1V.ino`](firmware/ER3_0_1V.ino). It reads the DHT11 and analog moisture plate, updates the SSD1306 OLED, and prints DS18B20 diagnostic temperature readings separately from the four-field CSV consumed by the dashboard. See [firmware/README.md](firmware/README.md) for wiring and library dependencies. The editable wiring diagram is available as [`hardware/AEGIS_HARDWARE.fzz`](hardware/AEGIS_HARDWARE.fzz).
 
 ## Security and limitations
 
